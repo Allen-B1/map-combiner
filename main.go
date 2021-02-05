@@ -75,6 +75,8 @@ func combine(bg color.Color, imgs ...image.Image) image.Image {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
+	os.MkdirAll("tmp")
+
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.File("index.html")
